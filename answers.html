@@ -1,0 +1,134 @@
+<!-- 1. Massivi tərsinə düzün. Massivi parametr kimi qəbul edən və tərs ardıcıllıqla yazılmış eyni elementlərdən ibarət massivi qaytaran reverseArray () funksiyasını yazın.
+
+Nümunə:
+const sentence = [“sense.“, “make”, “all”, “will”, “This”];
+console.log(reverseArray(sentence));
+
+Nəticə:
+[‘This’, ‘will’, ‘all’, ‘make’, ‘sense.’]; -->
+
+const input = ['sense.', 'make', 'all', 'will', 'This'];
+function reverseArr(input) {
+    var ret = new Array;
+    for(var i = input.length-1; i >= 0; i--) {
+        ret.push(input[i]);
+    }
+    return ret.join(' ');
+}
+
+
+var b = reverseArr(input);
+console.log(b)
+
+
+<!-- 
+2. Yadplanetliləri salamlayın. Sözlərdən ibarət massivi qəbul edən və konsolda hər bir yadplanetliyə salamlama çıxarmaq üçün dövrdən istifadə edən greetAliens () funksiyasını yazın. Salam belə bir formatda olmalıdır: "Oh powerful [name], we humans offer our unconditional surrender!”
+Nümunə:
+const aliens = [“Blorgous”, “Glamyx”, “Wegord”, “SpaceKing”];
+greetAliens(aliens);
+
+Nəticə:
+Oh powerful Blorgous, we humans offer our unconditional surrender!
+Oh powerful Glamyx, we humans offer our unconditional surrender!
+Oh powerful Wegord, we humans offer our unconditional surrender!
+Oh powerful SpaceKing, we humans offer our unconditional surrender! -->
+
+const element = ['Blorgous', 'Glamyx', 'Wegord', 'SpaceKing'];
+
+element.forEach(function(item,index) {
+    console.log('Oh powerful ' + item+',' +' we humans offer our unconditional surrender!') 
+});
+
+
+<!-- 3. 2 massivi parametr kimi qəbul edən və onların eyni dəyərli elementlərin konsola çıxaran justCoolStuff () funksiyasını yazın.
+
+Nümunə:
+const coolStuff = [
+  “gameboys”,
+  “skateboards”,
+  “backwards hats”,
+  “my room”,
+  “temporary tattoos”
+];
+const myStuff = [
+  “sweaters”,
+  “skateboards”,
+  “family-night”,
+  “my room”,
+];
+console.log(justCoolStuff(myStuff, coolStuff));
+
+Nəticə:
+[“skateboards”, “my room”] -->
+
+const coolStuff = [
+  'gameboys',
+  'skateboards',
+  'backwards hats',
+  'my room',
+  'temporary tattoos'
+];
+const myStuff = [
+  'sweaters',
+  'skateboards',
+  'family-night',
+  'my room',
+];
+
+const justCoolStuff = coolStuff.filter(element => 
+    myStuff.includes(element)
+);
+console.log(justCoolStuff)
+
+
+<!-- 4. Parametr kimi {ad: “Yeməyin adı”, içərik: “bitki, ət və ya süd”} formatında yeməklər massivini qəbul edən və onların hamısının vegetarian olub-olmadığını müəyyən edən isTheDinnerVegan () funksiyasını yazın.
+
+Nümunə:
+const meal = [
+  { name: “arugula”, source: “plant” },
+  { name: “tomatoes”, source: “plant” },
+  { name: “lemon”, source: “plant” },
+  { name: “olive oil”, source: “plant” },
+];
+const dinner = [
+  { name: “hamburger”, source: “meat” },
+  { name: “cheese”, source: “dairy” },
+  { name: “ketchup”, source: “plant” },
+  { name: “bun”, source: “plant” }
+];
+console.log(isTheDinnerVegan(meal));
+console.log(isTheDinnerVegan(dinner));
+
+Nəticə:
+true
+false -->
+
+const meal = [
+  { name: 'arugula', source: 'plant' },
+  { name: 'tomatoes', source: 'plant' },
+  { name: 'lemon', source: 'plant' },
+  { name: 'olive oil', source: 'plant' },
+];
+const dinner = [
+  { name: 'hamburger', source: 'meat' },
+  { name: 'cheese', source: 'dairy' },
+  { name: 'ketchup', source: 'plant' },
+  { name: 'bun', source: 'plant' }
+];
+count=0
+function isTheDinnerVegan(meal){
+const brands = meal.map(({ source }) => {
+    if(source=='plant'){
+        count+=1
+    }}
+);
+    if(count==4){
+        return true
+    }
+    else{
+        return false
+    }}
+console.log(isTheDinnerVegan(meal))
+console.log(isTheDinnerVegan(dinner))
+
+
